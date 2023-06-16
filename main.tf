@@ -23,4 +23,4 @@ resource "aws_instance" "web" {
   }
 }
 
-variable "?"{}
+variable "test_key"{}
