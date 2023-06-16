@@ -23,4 +23,7 @@ resource "aws_instance" "web" {
   }
 }
 
-variable "test_key"{}
+variable "AWS_SECRET_ACCESS_KEY"{
+    type = string
+    description = "aws key"
+}
