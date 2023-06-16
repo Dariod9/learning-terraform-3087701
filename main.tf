@@ -34,7 +34,7 @@ variable "AWS_SECRET_ACCESS_KEY"{
     description = "aws key"
 }
 
-resource "aws_security_group" "blog"{
+resource "aws_security_group" "blog_sg"{
   name        = "blog_sg"
   description = "Allow HTTP and HTTPS IN. Allow Everything OUT."
 
