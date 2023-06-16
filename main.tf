@@ -23,7 +23,7 @@ resource "aws_instance" "blog" {
   instance_type = var.instance_type
 
   vpc_security_group_ids = [aws_security_group.blog_sg.id]
-  
+
   tags = {
     Name = "HelloWorld"
   }
@@ -36,7 +36,7 @@ variable "AWS_SECRET_ACCESS_KEY"{
 
 resource "aws_security_group" "blog"{
   name        = "blog_sg"
-  description = "Allow HTTP and HTTPS IN. Allow Everything OUT.
+  description = "Allow HTTP and HTTPS IN. Allow Everything OUT."
 
   vpc_id      = data.aws_vpc.default.id
 }
