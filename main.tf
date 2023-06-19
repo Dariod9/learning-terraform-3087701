@@ -58,7 +58,7 @@ module "alb" {
 
   vpc_id             = module.vpc.vpc_id
   subnets            = module.vpc.public_subnets
-  security_groups    = module.blog_sec_g.security_group_id ["sg-edcd9784", "sg-edcd9785"]
+  security_groups    = module.blog_sec_g.security_group_id
 
   target_groups = [
     {
