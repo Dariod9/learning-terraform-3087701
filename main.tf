@@ -32,15 +32,24 @@ module "vpc" {
   }
 }
 
-resource "aws_instance" "blog" {
-  ami           = data.aws_ami.app_ami.id
-  instance_type = var.instance_type
-  subnet_id              = module.vpc.public_subnets[0]
-  vpc_security_group_ids = [module.blog_sec_g.security_group_id]
 
-  tags = {
-    Name = "HelloWorld"
-  }
+module "autoscaling" {
+  source  = "terraform-aws-modules/autoscaling/aws"
+  version = "6.10.0"
+ 
+  name = "blog"
+  min_size = 1
+  max_size = 2
+  
+  vpc_zone_identifier = module.vpc.public_subnets
+  target_group_arns   = module.alb.target_group_arns
+  vpc_security_groups = [module.blog_sec_g.security_group_id]
+  
+  image_id           = data.aws_ami.app_ami.id
+  instance_type = var.instance_type
+
+
+  # insert the 1 required variable here
 }
 
 variable "AWS_SECRET_ACCESS_KEY"{
