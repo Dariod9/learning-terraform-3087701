@@ -41,9 +41,3 @@ variable "max_size"{
   description = "minimum number of instances ASG"
   default = 2
 }
-
-
-variable "AWS_SECRET_ACCESS_KEY"{
-    type = string
-    description = "aws key"
-}
