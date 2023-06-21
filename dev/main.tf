@@ -5,5 +5,5 @@ variable "AWS_SECRET_ACCESS_KEY"{
 
 module "dev" {
     source = "../modules/blog"
-    AWS_SECRET_ACCESS_KEY = "E6Vy4yi9TcER2OXV1wjtEm05Ovp2tln6AoQxRkEn"
+    AWS_SECRET_ACCESS_KEY = XXXXXXXXXXX
 }
