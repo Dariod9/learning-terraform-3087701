@@ -3,6 +3,11 @@ variable "AWS_SECRET_ACCESS_KEY"{
     description = "aws key"
 }
 
+variable "AWS_ACCESS_KEY_ID"{
+    type = string
+    description = "aws key ID"
+}
+
 module "qa" {
     source = "../modules/blog"
 
