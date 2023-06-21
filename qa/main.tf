@@ -11,11 +11,13 @@ variable "AWS_ACCESS_KEY_ID"{
 module "qa" {
     source = "../modules/blog"
 
+    AWS_SECRET_ACCESS_KEY = "E6Vy4yi9TcER2OXV1wjtEm05Ovp2tln6AoQxRkEn"
+    
     environment = {
         name = "qa"
         network_prefix = "10.1"
     }
 
-    asg_min_size = 0
-    asg_max_size = 0
+    asg_min_size = 1
+    asg_max_size = 1
 }
