@@ -31,6 +31,10 @@ variable "environment"{
   }
 }
 
+variable "AWS_SECRET_ACCESS_KEY"{
+    type = string
+    description = "aws key"
+}
 
 variable "min_size"{
   description = "minimum number of instances ASG"

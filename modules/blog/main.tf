@@ -48,10 +48,6 @@ module "blog_autoscaling" {
   image_id            = data.aws_ami.app_ami.id
 }
 
-variable "AWS_SECRET_ACCESS_KEY"{
-    type = string
-    description = "aws key"
-}
 
 module "alb" {
   source  = "terraform-aws-modules/alb/aws"
